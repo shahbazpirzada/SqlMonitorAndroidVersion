@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.stech.printercloudapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+
+    <uses-permission
+        android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+
+    <application
+        android:name=".appconfig.AppConfig"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="SQL Monitor App"
+        android:roundIcon="@drawable/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="DATABASE"
+            android:value="TicketAlert.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="package com.example.stech.printercloudapp.ticketalertmodel;"
+            android:value="com.grafixartist.PrinterCloudApp" />
+
+        <activity android:name=".SecondActivity" />
+
+        <service
+            android:name=".PostGetService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <service
+            android:name="com.example.stech.printercloudapp.BackendService.BackendIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+        </service>
+
+        <service
+            android:name=".JobService.JobSchedularService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            ></service>
+
+
+    </application>
+
+</manifest>
